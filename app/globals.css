@@ -1,0 +1,724 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 94.1%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-sky-50 text-foreground font-arabic;
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-rtl {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* 60-30-10 Color System Buttons */
+  .btn-primary {
+    @apply bg-tourism-primary hover:from-sky-600 hover:to-sky-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sky-500/25;
+  }
+
+  .btn-secondary {
+    @apply bg-tourism-secondary hover:from-sunset-600 hover:to-sunset-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sunset-500/25;
+  }
+
+  .btn-accent {
+    @apply bg-tourism-accent hover:from-coral-600 hover:to-coral-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-coral-500/25 animate-coral-pulse;
+  }
+
+  .btn-outline {
+    @apply bg-white hover:bg-sky-50 text-sky-600 border-2 border-sky-500 hover:border-sky-600 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .card-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .card-glow::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transform -skew-x-12 -translate-x-full transition-all duration-700;
+  }
+
+  .card-glow:hover::before {
+    @apply opacity-20 translate-x-full;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-sky-600 via-sunset-500 to-coral-500 bg-clip-text text-transparent;
+  }
+
+  .text-primary-gradient {
+    @apply bg-tourism-primary bg-clip-text text-transparent;
+  }
+
+  .text-secondary-gradient {
+    @apply bg-tourism-secondary bg-clip-text text-transparent;
+  }
+
+  .text-accent-gradient {
+    @apply bg-tourism-accent bg-clip-text text-transparent;
+  }
+
+  .hero-bg {
+    background: linear-gradient(
+        135deg,
+        rgba(14, 165, 233, 0.8) 0%,
+        rgba(249, 115, 22, 0.6) 50%,
+        rgba(239, 68, 68, 0.4) 100%
+      ), url("/placeholder.svg?height=1080&width=1920") center / cover;
+  }
+
+  .section-fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .section-fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .floating-element {
+    @apply animate-float;
+  }
+
+  .plane-animation {
+    @apply animate-plane-fly;
+  }
+
+  .glow-effect {
+    @apply animate-glow;
+  }
+
+  .pulse-button {
+    @apply animate-coral-pulse;
+  }
+
+  /* Custom scrollbar with 60-30-10 colors */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-sky-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sky-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sky-600;
+  }
+
+  /* Loading spinner */
+  .spinner {
+    @apply w-8 h-8 border-4 border-sky-200 border-t-sky-600 rounded-full animate-spin;
+  }
+
+  /* Parallax effect */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Smooth transitions for route changes */
+  .page-transition {
+    @apply transition-all duration-500 ease-in-out;
+  }
+
+  /* Enhanced focus states for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-4 focus:ring-sky-300 focus:ring-opacity-50;
+  }
+
+  /* Russian flag colors accent */
+  .russian-accent {
+    background: linear-gradient(90deg, #ffffff 33%, #0052cc 33%, #0052cc 66%, #cc0000 66%);
+    height: 4px;
+  }
+
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-coral-500 transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* City card special effects */
+  .city-card {
+    @apply relative overflow-hidden rounded-xl;
+  }
+
+  .city-card::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none;
+  }
+
+  /* Testimonial card styling */
+  .testimonial-card {
+    @apply bg-white/90 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
+
+  /* Service icon animation */
+  .service-icon {
+    @apply transition-all duration-300 group-hover:scale-110 group-hover:rotate-6;
+  }
+
+  /* 60-30-10 Background Classes */
+  .bg-primary-section {
+    @apply bg-gradient-to-br from-sky-50 to-sky-100;
+  }
+
+  .bg-secondary-section {
+    @apply bg-gradient-to-br from-sunset-50 to-sunset-100;
+  }
+
+  .bg-accent-section {
+    @apply bg-gradient-to-br from-coral-50 to-coral-100;
+  }
+
+  .bg-mixed-section {
+    @apply bg-gradient-to-br from-sky-50 via-sunset-50 to-coral-50;
+  }
+
+  /* Tourism Card Styles */
+  .tourism-card {
+    @apply bg-white/90 backdrop-blur-sm border border-sky-200/50 shadow-xl hover:shadow-2xl transition-all duration-500;
+  }
+
+  .tourism-card-primary {
+    @apply bg-gradient-to-br from-sky-50 to-sky-100 border-sky-200;
+  }
+
+  .tourism-card-secondary {
+    @apply bg-gradient-to-br from-sunset-50 to-sunset-100 border-sunset-200;
+  }
+
+  .tourism-card-accent {
+    @apply bg-gradient-to-br from-coral-50 to-coral-100 border-coral-200;
+  }
+
+  /* Enhanced responsive typography */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+
+  .text-responsive-4xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  /* Responsive padding and margins */
+  .p-responsive {
+    @apply p-4 sm:p-6 md:p-8 lg:p-12;
+  }
+
+  .px-responsive {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+
+  .py-responsive {
+    @apply py-8 sm:py-12 md:py-16 lg:py-24;
+  }
+
+  .mb-responsive {
+    @apply mb-6 sm:mb-8 md:mb-12;
+  }
+
+  .mt-responsive {
+    @apply mt-6 sm:mt-8 md:mt-12;
+  }
+
+  /* Responsive container */
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  /* Responsive card */
+  .card-responsive {
+    @apply p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl md:rounded-2xl;
+  }
+
+  /* Responsive button */
+  .btn-responsive {
+    @apply px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg rounded-lg sm:rounded-xl;
+  }
+
+  /* Responsive grid gaps */
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .gap-responsive-lg {
+    @apply gap-6 sm:gap-8 md:gap-12;
+  }
+}
+
+/* Custom animations for specific elements */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Intersection Observer animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced Tourism-Specific Styles with 60-30-10 */
+.tourism-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #f97316 50%, #ef4444 100%);
+}
+
+.tourism-card-hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tourism-card-hover:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(14, 165, 233, 0.15);
+}
+
+/* Floating Animation for Tourism Elements */
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes floatMedium {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-5deg);
+  }
+}
+
+@keyframes floatFast {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(10deg);
+  }
+}
+
+.float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+.float-medium {
+  animation: floatMedium 3s ease-in-out infinite;
+}
+.float-fast {
+  animation: floatFast 2s ease-in-out infinite;
+}
+
+/* Enhanced Button Styles with 60-30-10 */
+.btn-tourism-primary {
+  background: linear-gradient(45deg, #0ea5e9 0%, #38bdf8 100%);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-tourism-secondary {
+  background: linear-gradient(45deg, #f97316 0%, #fb923c 100%);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-tourism-accent {
+  background: linear-gradient(45deg, #ef4444 0%, #f87171 100%);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: coral-pulse 2s infinite;
+}
+
+.btn-tourism-primary::before,
+.btn-tourism-secondary::before,
+.btn-tourism-accent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-tourism-primary:hover::before,
+.btn-tourism-secondary:hover::before,
+.btn-tourism-accent:hover::before {
+  left: 100%;
+}
+
+.btn-tourism-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+}
+
+.btn-tourism-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+}
+
+.btn-tourism-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+/* Russian Flag Animation with 60-30-10 integration */
+.russian-flag-wave {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 33.33%,
+    #0ea5e9 33.33%,
+    #0ea5e9 66.66%,
+    #ef4444 66.66%,
+    #ef4444 100%
+  );
+  background-size: 300% 100%;
+  animation: flagWave 3s linear infinite;
+}
+
+@keyframes flagWave {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Tourism Icon Animations */
+.tourism-icon-bounce {
+  animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Enhanced Parallax Effects */
+.parallax-tourism {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.parallax-tourism::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(14, 165, 233, 0.3), rgba(249, 115, 22, 0.3), rgba(239, 68, 68, 0.2));
+}
+
+/* Enhanced Shadow Effects with 60-30-10 */
+.shadow-tourism-primary {
+  box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(14, 165, 233, 0.06);
+}
+
+.shadow-tourism-secondary {
+  box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.1), 0 2px 4px -1px rgba(249, 115, 22, 0.06);
+}
+
+.shadow-tourism-accent {
+  box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.1), 0 2px 4px -1px rgba(239, 68, 68, 0.06);
+}
+
+/* Glowing Text Effect with 60-30-10 */
+.text-glow-primary {
+  text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
+
+.text-glow-secondary {
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+/* Enhanced Loading States */
+.loading-tourism {
+  background: linear-gradient(90deg, #e0f2fe 25%, #bae6fd 50%, #e0f2fe 75%);
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Tourism-specific responsive utilities */
+@media (max-width: 768px) {
+  .tourism-card-hover:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+
+  .btn-tourism-primary,
+  .btn-tourism-secondary,
+  .btn-tourism-accent {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Enhanced focus states for accessibility with 60-30-10 */
+.focus-tourism-primary {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.5);
+}
+
+.focus-tourism-secondary {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.5);
+}
+
+.focus-tourism-accent {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.5);
+}
+
+/* Custom scrollbar with 60-30-10 theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f0f9ff, #e0f2fe);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ea5e9, #0284c7);
+  border-radius: 6px;
+  border: 2px solid #f0f9ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0284c7, #0369a1);
+}
+
+/* Mobile-first media queries for better mobile performance */
+@media (max-width: 640px) {
+  .hero-bg {
+    background-attachment: scroll;
+  }
+
+  .parallax-tourism {
+    background-attachment: scroll;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .tourism-card-hover:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
