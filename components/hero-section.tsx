@@ -193,7 +193,7 @@ export function HeroSection() {
       </div>
 
       {/* Enhanced Scroll Indicator - Mobile Responsive */}
-      <button
+      {/* <button
         onClick={scrollToNext}
         className="absolute bottom-6 sm:bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 group touch-manipulation"
       >
@@ -208,7 +208,7 @@ export function HeroSection() {
             />
           </div>
         </div>
-      </button>
+      </button> */}
     </section>
   )
 }
