@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-sunset-300">قديموسكو</h3>
+            <h3 className="text-xl font-bold mb-4 text-sunset-300">قاضي موسكو</h3>
             <p className="text-sky-200 mb-4">شركتكم المتخصصة في السياحة إلى روسيا مع خدمات عربية متكاملة</p>
           </div>
 
@@ -73,7 +73,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-sky-800 mt-8 pt-8 text-center">
-          <p className="text-sky-200">© 2024 قديموسكو. جميع الحقوق محفوظة.</p>
+          <p className="text-sky-200">© 2024 قاضي موسكو. جميع الحقوق محفوظة.</p>
           <p className="text-sky-300 mt-2 text-sm">
             للتواصل السريع عبر واتساب:
             <button

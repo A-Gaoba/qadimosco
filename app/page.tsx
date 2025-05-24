@@ -9,14 +9,14 @@ import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "قديموسكو - أفضل شركة سياحة في روسيا | رحلات موسكو وسان بطرسبرغ وسوتشي",
+  title: "قاضي موسكو - أفضل شركة سياحة في روسيا | رحلات موسكو وسان بطرسبرغ وسوتشي",
   description:
-    "قديموسكو الشركة الرائدة في السياحة العربية بروسيا. رحلات سياحية مميزة، مرشدين عرب، حجز فنادق وأنشطة بأفضل الأسعار. أكثر من 5000 عميل سعيد.",
+    "قاضي موسكو الشركة الرائدة في السياحة العربية بروسيا. رحلات سياحية مميزة، مرشدين عرب، حجز فنادق وأنشطة بأفضل الأسعار. أكثر من 5000 عميل سعيد.",
   keywords:
     "شركة سياحة روسيا, رحلات موسكو, سياحة سان بطرسبرغ, سياحة سوتشي, مرشد عربي روسيا, حجز فنادق روسيا, أنشطة سياحية روسيا",
   openGraph: {
-    title: "قديموسكو - أفضل شركة سياحة في روسيا",
-    description: "اكتشف روسيا مع قديموسكو - رحلات مميزة ومرشدين عرب",
+    title: "قاضي موسكو - أفضل شركة سياحة في روسيا",
+    description: "اكتشف روسيا مع قاضي موسكو - رحلات مميزة ومرشدين عرب",
     url: "https://qadimosco.com",
     images: [{ url: "/og-home.jpg", width: 1200, height: 630 }],
   },
@@ -28,7 +28,7 @@ const structuredData = {
     {
       "@type": "TravelAgency",
       "@id": "https://qadimosco.com/#organization",
-      name: "قديموسكو",
+      name: "قاضي موسكو",
       alternateName: "Qadimosco",
       url: "https://qadimosco.com",
       logo: {
@@ -97,8 +97,8 @@ const structuredData = {
       "@type": "WebSite",
       "@id": "https://qadimosco.com/#website",
       url: "https://qadimosco.com",
-      name: "قديموسكو",
-      description: "موقع شركة قديموسكو للسياحة في روسيا",
+      name: "قاضي موسكو",
+      description: "موقع شركة قاضي موسكو للسياحة في روسيا",
       publisher: {
         "@id": "https://qadimosco.com/#organization",
       },

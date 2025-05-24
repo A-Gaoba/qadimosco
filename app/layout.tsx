@@ -21,9 +21,9 @@ const tajawal = Tajawal({
 })
 
 export const metadata: Metadata = {
-  title: "قديموسكو - أفضل شركة سياحة في روسيا | رحلات موسكو وسان بطرسبرغ وسوتشي",
+  title: "قاضي موسكو - أفضل شركة سياحة في روسيا | رحلات موسكو وسان بطرسبرغ وسوتشي",
   description:
-    "قديموسكو أفضل شركة سياحة عربية في روسيا. رحلات سياحية مميزة إلى موسكو وسان بطرسبرغ وسوتشي مع مرشدين عرب. حجز فنادق، أنشطة، ومواصلات بأفضل الأسعار.",
+    "قاضي موسكو أفضل شركة سياحة عربية في روسيا. رحلات سياحية مميزة إلى موسكو وسان بطرسبرغ وسوتشي مع مرشدين عرب. حجز فنادق، أنشطة، ومواصلات بأفضل الأسعار.",
   keywords: [
     "شركة سياحة روسيا",
     "رحلات روسيا",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "حجز فنادق روسيا",
     "أنشطة سياحية روسيا",
     "رحلات عائلية روسيا",
-    "قديموسكو",
+    "قاضي موسكو",
     "tourism company russia",
     "russia travel agency",
     "moscow tours",
@@ -71,9 +71,9 @@ export const metadata: Metadata = {
     "russia ski tours",
     "russia cruise tours",
   ].join(", "),
-  authors: [{ name: "قديموسكو" }],
-  creator: "قديموسكو",
-  publisher: "قديموسكو",
+  authors: [{ name: "قاضي موسكو" }],
+  creator: "قاضي موسكو",
+  publisher: "قاضي موسكو",
   robots: {
     index: true,
     follow: true,
@@ -90,16 +90,16 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     alternateLocale: ["en_US", "ru_RU"],
     url: "https://qadimosco.com",
-    siteName: "قديموسكو - شركة السياحة الرائدة في روسيا",
-    title: "قديموسكو - أفضل شركة سياحة في روسيا | رحلات موسكو وسان بطرسبرغ وسوتشي",
+    siteName: "قاضي موسكو - شركة السياحة الرائدة في روسيا",
+    title: "قاضي موسكو - أفضل شركة سياحة في روسيا | رحلات موسكو وسان بطرسبرغ وسوتشي",
     description:
-      "اكتشف روسيا مع قديموسكو، الشركة الرائدة في السياحة العربية بروسيا. رحلات مميزة، مرشدين عرب، وخدمات متكاملة لجميع المدن الروسية.",
+      "اكتشف روسيا مع قاضي موسكو، الشركة الرائدة في السياحة العربية بروسيا. رحلات مميزة، مرشدين عرب، وخدمات متكاملة لجميع المدن الروسية.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "قديموسكو - شركة السياحة في روسيا",
+        alt: "قاضي موسكو - شركة السياحة في روسيا",
       },
     ],
   },
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@qadimosco",
     creator: "@qadimosco",
-    title: "قديموسكو - أفضل شركة سياحة في روسيا",
+    title: "قاضي موسكو - أفضل شركة سياحة في روسيا",
     description: "رحلات سياحية مميزة إلى روسيا مع مرشدين عرب وخدمات متكاملة",
     images: ["/twitter-image.jpg"],
   },
@@ -139,7 +139,7 @@ export const metadata: Metadata = {
     "business:contact_data:phone_number": "+79174828474",
     "business:contact_data:website": "https://qadimosco.com",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

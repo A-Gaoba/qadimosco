@@ -30,9 +30,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white shadow-md"
-      }`}
+      className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white shadow-md"
+        }`}
     >
       <div className="russian-accent"></div>
       <div className="container-rtl">
@@ -55,7 +54,7 @@ export function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-sky-600 via-sunset-600 to-coral-600 bg-clip-text text-transparent">
-                قديموسكو
+                قاضي موسكو
               </span>
               <span className="text-xs sm:text-sm text-sky-600 font-medium">اكتشف روسيا معنا</span>
             </div>
@@ -67,9 +66,8 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative font-medium transition-all duration-300 animated-underline text-sm md:text-base ${
-                  activeLink === item.href ? "text-sky-600" : "text-sky-700 hover:text-sky-600"
-                }`}
+                className={`relative font-medium transition-all duration-300 animated-underline text-sm md:text-base ${activeLink === item.href ? "text-sky-600" : "text-sky-700 hover:text-sky-600"
+                  }`}
                 onClick={() => setActiveLink(item.href)}
               >
                 {item.label}
@@ -131,9 +129,8 @@ export function Navbar() {
 
         {/* Mobile Navigation with 60-30-10 Colors */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="py-4 border-t border-sky-100">
             <div className="flex flex-col space-y-4">
@@ -141,9 +138,8 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sky-700 hover:text-sky-600 font-medium px-4 py-3 rounded-lg hover:bg-sky-50 transition-all duration-300 transform text-sm md:text-base ${
-                    isOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-                  }`}
+                  className={`text-sky-700 hover:text-sky-600 font-medium px-4 py-3 rounded-lg hover:bg-sky-50 transition-all duration-300 transform text-sm md:text-base ${isOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                    }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                   onClick={() => {
                     setIsOpen(false)
@@ -157,9 +153,8 @@ export function Navbar() {
               {/* Mobile Cart Button - Prominent with Dynamic Counter */}
               <Link
                 href="/store"
-                className={`relative flex items-center justify-center bg-gradient-to-r from-coral-500 to-coral-600 hover:from-coral-600 hover:to-coral-700 text-white font-bold px-6 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg mx-4 mt-2 ${
-                  isOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-                }`}
+                className={`relative flex items-center justify-center bg-gradient-to-r from-coral-500 to-coral-600 hover:from-coral-600 hover:to-coral-700 text-white font-bold px-6 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg mx-4 mt-2 ${isOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                  }`}
                 style={{ transitionDelay: "500ms" }}
                 onClick={() => setIsOpen(false)}
               >

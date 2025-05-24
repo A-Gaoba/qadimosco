@@ -110,7 +110,7 @@ export function ComprehensiveTourForm() {
     if (!formData.fullName || !formData.fromDate || !formData.toDate) {
       // Show error toast
       if (typeof window !== "undefined" && (window as any).showToast) {
-        ;(window as any).showToast({
+        ; (window as any).showToast({
           type: "error",
           title: "بيانات ناقصة",
           message: "يرجى إكمال البيانات المطلوبة (الاسم والتواريخ)",
@@ -120,7 +120,7 @@ export function ComprehensiveTourForm() {
       return
     }
 
-    let message = `🌟 طلب جولة شاملة لجميع المدن الروسية - قديموسكو 🌟\n\n`
+    let message = `🌟 طلب جولة شاملة لجميع المدن الروسية - قاضي موسكو 🌟\n\n`
     message += `👤 الاسم: ${formData.fullName}\n`
     message += `📅 من: ${formData.fromDate}\n`
     message += `📅 إلى: ${formData.toDate}\n`
@@ -160,7 +160,7 @@ export function ComprehensiveTourForm() {
       message += `\n📝 طلبات خاصة:\n${formData.specialRequests}\n`
     }
 
-    message += `\nشكراً لاختياركم قديموسكو لجولتكم الشاملة في روسيا! 🇷🇺✈️`
+    message += `\nشكراً لاختياركم قاضي موسكو لجولتكم الشاملة في روسيا! 🇷🇺✈️`
 
     const whatsappNumber = "79174828474"
     const encodedMessage = encodeURIComponent(message)
@@ -168,7 +168,7 @@ export function ComprehensiveTourForm() {
 
     // Show success toast
     if (typeof window !== "undefined" && (window as any).showToast) {
-      ;(window as any).showToast({
+      ; (window as any).showToast({
         type: "success",
         title: "تم إرسال الطلب!",
         message: "سيتم توجيهك إلى واتساب لإكمال الحجز",

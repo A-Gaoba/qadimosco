@@ -4,7 +4,7 @@ import { Sparkles, ArrowLeft, MessageCircle, Calculator } from "lucide-react"
 
 export function CTASection() {
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent("مرحباً! أريد حجز رحلة إلى روسيا مع قديموسكو. يرجى مساعدتي في التخطيط 🇷🇺✈️")
+    const message = encodeURIComponent("مرحباً! أريد حجز رحلة إلى روسيا مع قاضي موسكو. يرجى مساعدتي في التخطيط 🇷🇺✈️")
     window.open(`https://wa.me/79174828474?text=${message}`, "_blank")
   }
 
@@ -46,7 +46,7 @@ export function CTASection() {
               <Sparkles className="w-8 h-8 text-coral-400 mr-3 animate-pulse" />
             </div>
 
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-sunset-400 mb-4 md:mb-6">مع قديموسكو</h3>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-sunset-400 mb-4 md:mb-6">مع قاضي موسكو</h3>
 
             <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed opacity-90 px-4">
               احجز رحلتك الآن واستمتع بتجربة سياحية لا تُنسى في أجمل المدن الروسية مع خدمات عربية متكاملة

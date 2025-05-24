@@ -1,9 +1,9 @@
-import type { MetadataRoute } from "next"
+import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "قديموسكو - شركة السياحة في روسيا",
-    short_name: "قديموسكو",
+    name: "قاضي موسكو - شركة السياحة في روسيا",
+    short_name: "قاضي موسكو",
     description: "أفضل شركة سياحة عربية في روسيا - رحلات مميزة ومرشدين عرب",
     start_url: "/",
     display: "standalone",
@@ -41,5 +41,5 @@ export default function manifest(): MetadataRoute.Manifest {
         form_factor: "narrow",
       },
     ],
-  }
+  };
 }

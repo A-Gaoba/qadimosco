@@ -14,7 +14,7 @@ import { useCart } from "@/hooks/use-cart"
 const hotelsStructuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "فنادق روسيا - قديموسكو",
+  name: "فنادق روسيا - قاضي موسكو",
   description: "قائمة بأفضل الفنادق في روسيا",
   numberOfItems: 12,
   itemListElement: [
@@ -348,7 +348,7 @@ export default function HotelsClientPage() {
     if (!isBookingDataComplete()) {
       // Show error toast
       if (typeof window !== "undefined" && (window as any).showToast) {
-        ;(window as any).showToast({
+        ; (window as any).showToast({
           type: "error",
           title: "بيانات ناقصة",
           message: "يرجى إكمال بيانات الحجز أولاً (التواريخ وعدد المسافرين)",
@@ -377,7 +377,7 @@ export default function HotelsClientPage() {
 
     // Show success toast
     if (typeof window !== "undefined" && (window as any).showToast) {
-      ;(window as any).showToast({
+      ; (window as any).showToast({
         type: "success",
         title: "تم إضافة الفندق!",
         message: `تم إضافة "${hotel.nameAr}" إلى سلة الحجز بنجاح`,
@@ -402,7 +402,7 @@ export default function HotelsClientPage() {
 
       // Show info toast
       if (typeof window !== "undefined" && (window as any).showToast) {
-        ;(window as any).showToast({
+        ; (window as any).showToast({
           type: "info",
           title: "تم استبدال الفندق",
           message: `تم استبدال "${existingHotel.nameAr || existingHotel.name}" بـ "${pendingHotel.nameAr}"`,
@@ -443,9 +443,8 @@ export default function HotelsClientPage() {
 
           <div className="flex items-center mb-3">
             <span
-              className={`inline-block text-xs px-2 py-1 rounded-full ${
-                hotel.type === "hotel" ? "bg-blue-100 text-blue-800" : "bg-green-100 text-green-800"
-              }`}
+              className={`inline-block text-xs px-2 py-1 rounded-full ${hotel.type === "hotel" ? "bg-blue-100 text-blue-800" : "bg-green-100 text-green-800"
+                }`}
             >
               {hotel.type === "hotel" ? "فندق" : "كوخ ريفي"}
             </span>
@@ -481,9 +480,8 @@ export default function HotelsClientPage() {
                       ))}
                     </div>
                     <span
-                      className={`px-3 py-1 rounded-full text-sm ${
-                        hotel.type === "hotel" ? "bg-blue-100 text-blue-800" : "bg-green-100 text-green-800"
-                      }`}
+                      className={`px-3 py-1 rounded-full text-sm ${hotel.type === "hotel" ? "bg-blue-100 text-blue-800" : "bg-green-100 text-green-800"
+                        }`}
                     >
                       {hotel.type === "hotel" ? "فندق" : "كوخ ريفي"}
                     </span>

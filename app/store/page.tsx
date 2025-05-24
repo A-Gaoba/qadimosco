@@ -26,7 +26,7 @@ export default function StorePage() {
 
     // Show info toast
     if (typeof window !== "undefined" && (window as any).showToast) {
-      ;(window as any).showToast({
+      ; (window as any).showToast({
         type: "info",
         title: "تم حذف العنصر",
         message: `تم حذف "${itemName}" من سلة الحجز`,
@@ -41,7 +41,7 @@ export default function StorePage() {
     if (newQuantity === 0) {
       const itemName = cart[index]?.name || cart[index]?.nameAr || "العنصر"
       if (typeof window !== "undefined" && (window as any).showToast) {
-        ;(window as any).showToast({
+        ; (window as any).showToast({
           type: "info",
           title: "تم حذف العنصر",
           message: `تم حذف "${itemName}" من سلة الحجز`,
@@ -64,7 +64,7 @@ export default function StorePage() {
     if (!formData.fullName) {
       // Show error toast
       if (typeof window !== "undefined" && (window as any).showToast) {
-        ;(window as any).showToast({
+        ; (window as any).showToast({
           type: "error",
           title: "خطأ في البيانات",
           message: "يرجى إدخال الاسم الكامل",
@@ -74,7 +74,7 @@ export default function StorePage() {
       return
     }
 
-    let message = `🌟 طلب حجز جديد من قديموسكو 🌟\n\n`
+    let message = `🌟 طلب حجز جديد من قاضي موسكو 🌟\n\n`
     message += `👤 الاسم: ${formData.fullName}\n`
     message += `👥 عدد البالغين: ${formData.adults}\n`
     message += `👶 عدد الأطفال: ${formData.children}\n`
@@ -123,7 +123,7 @@ export default function StorePage() {
       message += `📝 ملاحظات إضافية:\n${formData.notes}\n\n`
     }
 
-    message += `شكراً لاختياركم قديموسكو! 🇷🇺✈️`
+    message += `شكراً لاختياركم قاضي موسكو! 🇷🇺✈️`
 
     const whatsappNumber = "79174828474"
     const encodedMessage = encodeURIComponent(message)
@@ -131,7 +131,7 @@ export default function StorePage() {
 
     // Show success toast
     if (typeof window !== "undefined" && (window as any).showToast) {
-      ;(window as any).showToast({
+      ; (window as any).showToast({
         type: "success",
         title: "تم إرسال الطلب!",
         message: "سيتم توجيهك إلى واتساب لإكمال الحجز",

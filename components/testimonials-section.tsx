@@ -15,7 +15,7 @@ export function TestimonialsSection() {
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       date: "15 نوفمبر 2024",
       trip: "رحلة موسكو - 5 أيام",
-      preview: "موسكو في الربيع جميلة جداً! الحدائق والطقس كان رائع. تنظيم ممتاز من قديموسكو.",
+      preview: "موسكو في الربيع جميلة جداً! الحدائق والطقس كان رائع. تنظيم ممتاز من قاضي موسكو.",
       rating: 5,
     },
     {
@@ -26,7 +26,7 @@ export function TestimonialsSection() {
         "https://images.unsplash.com/photo-1571406252267-79d4ac2a7c51?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       date: "8 أكتوبر 2024",
       trip: "رحلة سان بطرسبرغ - 7 أيام",
-      preview: "تجربة لا تُنسى في سان بطرسبرغ. التنظيم كان مثالي والفنادق فاخرة. شكراً قديموسكو!",
+      preview: "تجربة لا تُنسى في سان بطرسبرغ. التنظيم كان مثالي والفنادق فاخرة. شكراً قاضي موسكو!",
       rating: 5,
     },
     {
@@ -37,7 +37,7 @@ export function TestimonialsSection() {
         "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       date: "22 سبتمبر 2024",
       trip: "رحلة عائلية سوتشي - 10 أيام",
-      preview: "صيف رائع في سوتشي! الطقس كان مثالي والأنشطة متنوعة. فريق قديموسكو محترف جداً.",
+      preview: "صيف رائع في سوتشي! الطقس كان مثالي والأنشطة متنوعة. فريق قاضي موسكو محترف جداً.",
       rating: 5,
     },
   ]

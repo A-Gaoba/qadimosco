@@ -11,8 +11,8 @@ interface SEOHeadProps {
 }
 
 export function SEOHead({
-  title = "قديموسكو - أفضل شركة سياحة في روسيا",
-  description = "شركة قديموسكو الرائدة في السياحة العربية بروسيا. رحلات مميزة ومرشدين عرب",
+  title = "قاضي موسكو - أفضل شركة سياحة في روسيا",
+  description = "شركة قاضي موسكو الرائدة في السياحة العربية بروسيا. رحلات مميزة ومرشدين عرب",
   keywords = "شركة سياحة روسيا, رحلات روسيا, سياحة موسكو",
   canonical,
   ogImage = "/og-default.jpg",
@@ -62,7 +62,7 @@ export function SEOHead({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "قديموسكو",
+          name: "قاضي موسكو",
           image: "https://qadimosco.com/logo.png",
           telephone: "+79174828474",
           address: {
