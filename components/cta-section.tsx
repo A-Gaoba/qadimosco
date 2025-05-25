@@ -87,7 +87,7 @@ export function CTASection() {
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-coral-400 rounded-full ml-2 animate-pulse"></div>
-                <span className="text-sm">واتساب: +79174828474</span>
+                <span className="text-sm">واتساب: +79177714832</span>
               </div>
             </div>
           </div>

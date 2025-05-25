@@ -27,15 +27,15 @@ export function Footer() {
                 className="flex items-center hover:text-coral-300 transition-colors duration-300 group w-full text-right"
               >
                 <MessageCircle className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
-                <span>واتساب: +79174828474</span>
+                <span>واتساب: +79177714832</span>
               </button>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 ml-2" />
-                <span>+79174828474</span>
+                <span>+79177714832</span>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 ml-2" />
-                <span>info@qadimosco.com</span>
+                <span>abdulhameed4308@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 ml-2" />
@@ -80,7 +80,7 @@ export function Footer() {
               onClick={handleWhatsAppClick}
               className="text-coral-300 hover:text-coral-200 font-semibold mr-2 transition-colors duration-300"
             >
-              +79174828474
+              +79177714832
             </button>
           </p>
         </div>

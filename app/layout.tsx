@@ -136,7 +136,7 @@ export const metadata: Metadata = {
     "business:contact_data:region": "Moscow",
     "business:contact_data:postal_code": "101000",
     "business:contact_data:country_name": "Russia",
-    "business:contact_data:phone_number": "+79174828474",
+    "business:contact_data:phone_number": "+79177714832",
     "business:contact_data:website": "https://qadimosco.com",
   },
   generator: 'v0.dev'

@@ -35,7 +35,7 @@ export function SEOHead({
       <meta name="ICBM" content="55.7558, 37.6176" />
 
       {/* Business information */}
-      <meta name="business:contact_data:phone_number" content="+79174828474" />
+      <meta name="business:contact_data:phone_number" content="+79177714832" />
       <meta name="business:contact_data:website" content="https://qadimosco.com" />
       <meta name="business:contact_data:country_name" content="Russia" />
 
@@ -64,7 +64,7 @@ export function SEOHead({
           "@type": "LocalBusiness",
           name: "قاضي موسكو",
           image: "https://qadimosco.com/logo.png",
-          telephone: "+79174828474",
+          telephone: "+79177714832",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Moscow",

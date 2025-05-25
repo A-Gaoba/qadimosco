@@ -49,7 +49,7 @@ const structuredData = {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+79174828474",
+        telephone: "+79177714832",
         contactType: "customer service",
         availableLanguage: ["Arabic", "Russian", "English"],
         areaServed: ["RU", "SA", "AE", "KW", "QA", "OM", "BH"],
