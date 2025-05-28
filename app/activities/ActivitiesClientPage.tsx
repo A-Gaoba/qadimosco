@@ -40,7 +40,7 @@ export default function ActivitiesClientPage() {
       category: "طبيعة",
       duration: "ساعتان",
       price: 4400,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/25/1e/6d/caption.jpg?w=900&h=500&s=1",
       description: "تجربة ركوب خيل ممتعة في الطبيعة الخلابة",
     },
     {
@@ -50,7 +50,7 @@ export default function ActivitiesClientPage() {
       category: "مغامرات",
       duration: "3 ساعات",
       price: 15000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://www.shutterstock.com/image-photo/on-off-road-two-people-260nw-2261804651.jpg",
       description: "مغامرة مثيرة بالدراجات العملاقة في المسارات الجبلية",
     },
     {
@@ -80,7 +80,7 @@ export default function ActivitiesClientPage() {
       category: "عائلية",
       duration: "ساعة واحدة",
       price: 5000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://img.youm7.com/ArticleImgs/2020/12/30/43546-%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-%D8%A7%D9%84%D9%83%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%89-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A5%D9%86%D9%82%D8%A7%D8%B0-(5).jpg",
       description: "التصوير واللعب مع الهاسكي والتجول لمدة ساعة وشرب الشاي وتناول البسكويت وركوب عربة الهاسكي",
     },
     {
@@ -110,7 +110,7 @@ export default function ActivitiesClientPage() {
       category: "طبيعة",
       duration: "45 دقيقة",
       price: 1500,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://russiatoursgate.com/wp-content/uploads/2025/01/Moscow-cable-car-tour-optimized.jpg",
       description: "رحلة بالتلفريك مع إطلالات خلابة على الجبال",
     },
 
@@ -122,7 +122,7 @@ export default function ActivitiesClientPage() {
       category: "عائلية",
       duration: "ساعة واحدة",
       price: 2900,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://russiatoursgate.com/wp-content/uploads/2025/01/Moscow-Dolphin-Show-optimized.jpg",
       description: "عرض مذهل للدلافين المدربة",
     },
     {
@@ -144,7 +144,7 @@ export default function ActivitiesClientPage() {
       category: "ثقافية",
       duration: "ساعتان",
       price: 3800,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://ivisitrussia.com/119-large_default/the-russian-circus-tour.jpg",
       description: "عرض السيرك الروسي التقليدي الشهير",
     },
     {
@@ -154,7 +154,7 @@ export default function ActivitiesClientPage() {
       category: "ثقافية",
       duration: "3 ساعات",
       price: 3500,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://russiatoursgate.com/wp-content/uploads/2025/01/cruise-on-the-moscow-river-optimized.jpg",
       description: "جولة بحرية ساحرة في أنهار سان بطرسبرغ",
     },
     {
@@ -186,7 +186,7 @@ export default function ActivitiesClientPage() {
       category: "مغامرات",
       duration: "20 دقيقة",
       price: 26000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://russiatoursgate.com/wp-content/uploads/2025/01/Moscow-Helicopter-Tour-optimized.jpg",
       description: "جولة جوية مذهلة بالهليكوبتر لمدة 20 دقيقة",
     },
     {
@@ -196,7 +196,7 @@ export default function ActivitiesClientPage() {
       category: "مغامرات",
       duration: "ساعة واحدة",
       price: 9900,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://russiatoursgate.com/wp-content/uploads/2025/01/Balloon-Tour-in-Moscow-optimized.jpg",
       description: "رحلة رومانسية بالمنطاد لمدة ساعة كاملة",
     },
 
@@ -218,7 +218,7 @@ export default function ActivitiesClientPage() {
       category: "مميزة",
       duration: "30 دقيقة",
       price: 50000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://ainalarab.com/wp-content/uploads/2024/03/%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%B5%D9%88%D9%8A%D8%B1-%D9%85%D8%B9-%D8%A7%D9%84%D9%86%D9%85%D8%B1-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A.jpeg",
       description: "جلسة تصوير فريدة مع النمر",
     },
     {
@@ -228,7 +228,7 @@ export default function ActivitiesClientPage() {
       category: "مميزة",
       duration: "ساعة واحدة",
       price: 36000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://ainalarab.com/wp-content/uploads/2024/03/%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%B5%D9%88%D9%8A%D8%B1-%D9%85%D8%B9-%D8%A7%D9%84%D8%AF%D8%A8.jpeg",
       description: "التصوير مع الدب في ملابس تراثية روسية وشرب الشاي وتناول البسكويت",
     },
     {
@@ -260,7 +260,7 @@ export default function ActivitiesClientPage() {
       category: "عائلية",
       duration: "يوم كامل",
       price: 5000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://lh3.googleusercontent.com/p/AF1QipPnAC2YpVuFOm-QHaDoNBqG-7-Bp1k-HAqhAJgF=w270-h312-n-k-no",
       description: "مدينة ألعاب شاملة الألعاب",
     },
     {
