@@ -43,7 +43,7 @@ export default function TransportationClientPage() {
       currency: "USD",
       description: "Comfortable business class vehicle for airport transfers",
       descriptionAr: "سيارة بزنس مريحة للنقل من وإلى المطار",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://friendscarrental.com/frontend/image/mercedes-c-class-2025-1739449631622.jpg",
       features: ["Air Conditioning", "Leather Seats", "WiFi", "Professional Driver"],
       featuresAr: ["تكييف هواء", "مقاعد جلدية", "واي فاي", "سائق محترف"],
     },
@@ -57,7 +57,7 @@ export default function TransportationClientPage() {
       currency: "USD",
       description: "Spacious van for families and groups",
       descriptionAr: "فان واسع للعائلات والمجموعات",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIYuJomxltzvi-aleDZiE0ObYBWiWeZ6SnzA&s",
       features: ["7 Seats", "Large Luggage Space", "Air Conditioning", "Professional Driver"],
       featuresAr: ["7 مقاعد", "مساحة أمتعة كبيرة", "تكييف هواء", "سائق محترف"],
     },
@@ -71,7 +71,7 @@ export default function TransportationClientPage() {
       currency: "USD",
       description: "Premium van with enhanced comfort",
       descriptionAr: "فان مميز مع راحة محسنة",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://limousinenassar.com/wp-content/uploads/2023/03/1200x900n-1.webp",
       features: ["7 Seats", "Premium Interior", "Extra Luggage Space", "Professional Driver"],
       featuresAr: ["7 مقاعد", "تصميم داخلي مميز", "مساحة أمتعة إضافية", "سائق محترف"],
     },
@@ -85,7 +85,7 @@ export default function TransportationClientPage() {
       currency: "USD",
       description: "Large bus for big groups and events",
       descriptionAr: "باص كبير للمجموعات الكبيرة والفعاليات",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtlWpA2uydLP14XY87IxW65l_v0sRz36H5Eg&s",
       features: ["20+ Seats", "Air Conditioning", "Large Luggage Compartment", "Professional Driver"],
       featuresAr: ["20+ مقعد", "تكييف هواء", "مقصورة أمتعة كبيرة", "سائق محترف"],
     },
@@ -195,7 +195,7 @@ export default function TransportationClientPage() {
 
     // Show success toast
     if (typeof window !== "undefined" && (window as any).showToast) {
-      ;(window as any).showToast({
+      ; (window as any).showToast({
         type: "success",
         title: "تم إضافة المواصلات!",
         message: `تم إضافة "${vehicle.nameAr}" إلى سلة الحجز`,
@@ -283,9 +283,8 @@ export default function TransportationClientPage() {
               return (
                 <Card
                   key={vehicle.id}
-                  className={`card-hover transition-all duration-300 ${
-                    isSelected ? "ring-2 ring-blue-500 shadow-lg" : ""
-                  } ${vehicle.capacity === passengers ? "border-green-500 border-2" : ""}`}
+                  className={`card-hover transition-all duration-300 ${isSelected ? "ring-2 ring-blue-500 shadow-lg" : ""
+                    } ${vehicle.capacity === passengers ? "border-green-500 border-2" : ""}`}
                 >
                   <CardHeader className="pb-3">
                     <div className="flex justify-between items-start">

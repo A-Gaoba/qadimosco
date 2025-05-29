@@ -11,7 +11,7 @@ export function CitiesSection() {
       name: "موسكو",
       description: "العاصمة الساحرة بقصورها التاريخية والساحة الحمراء الشهيرة",
       image:
-        "https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://geohistory.today/wp-content/uploads/2017/09/Moscow.jpg",
       href: "/activities?city=moscow",
       highlights: ["الساحة الحمراء", "الكرملين", "مسرح البولشوي"],
       temperature: "15°C",
@@ -27,7 +27,7 @@ export function CitiesSection() {
       name: "سان بطرسبرغ",
       description: "مدينة القياصرة والثقافة مع أجمل القصور والمتاحف في العالم",
       image:
-        "https://images.unsplash.com/photo-1571406252267-79d4ac2a7c51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://www.ambassadorcruiseline.com/_astro/1200x675_Z1KLv8g.webp",
       href: "/activities?city=petersburg",
       highlights: ["متحف الهرمتاج", "قصر الشتاء", "شارع نيفسكي"],
       temperature: "12°C",
@@ -43,7 +43,7 @@ export function CitiesSection() {
       name: "سوتشي",
       description: "منتجع البحر الأسود الساحر مع الطبيعة الخلابة والأنشطة المتنوعة",
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://skylifeholidays.com/wp-content/uploads/2024/07/2.jpg",
       href: "/activities?city=sochi",
       highlights: ["البحر الأسود", "منتجعات التزلج", "الحدائق الاستوائية"],
       temperature: "22°C",

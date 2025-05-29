@@ -384,7 +384,7 @@ export default function ActivitiesClientPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center">الأنشطة والجولات السياحية</h1>
 
         {/* Filters */}
-        <div className="bg-white p-6 rounded-lg shadow-md mb-8">
+        {/* <div className="bg-white p-6 rounded-lg shadow-md mb-8">
           <h2 className="text-xl font-semibold text-blue-900 mb-4">تصفية النتائج</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
@@ -417,7 +417,7 @@ export default function ActivitiesClientPage() {
               </Select>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Selected Activities Summary */}
         {getTotalItems() > 0 && (

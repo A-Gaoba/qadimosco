@@ -20,7 +20,7 @@ export function HeroSection() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1520637836862-4d197d17c93a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+        "https://ainalarab.com/wp-content/uploads/2024/03/e3d7ccea-6e3e-4998-9b90-1dd09db2921c.jpeg",
       title: "موسكو الساحرة",
       subtitle: "تنتظرك",
       description: "استكشف الكرملين والساحة الحمراء مع مرشدين يتحدثون العربية",
@@ -28,7 +28,7 @@ export function HeroSection() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1571406252267-79d4ac2a7c51?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+        "https://www.ambassadorcruiseline.com/_astro/1200x675_Z1KLv8g.webp",
       title: "سان بطرسبرغ",
       subtitle: "مدينة القياصرة",
       description: "اكتشف قصور الهرمتاج وجمال العمارة الروسية الكلاسيكية",
