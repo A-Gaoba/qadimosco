@@ -90,7 +90,7 @@ export default function ActivitiesClientPage() {
       category: "مغامرات",
       duration: "30 دقيقة",
       price: 3500,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://ainrussia.com/wp-content/uploads/2024/02/625d1fc0-2823-46ff-b381-104b7294abf6-1.jpeg",
       description: "تجربة ركوب عربة الهاسكي التقليدية",
     },
     {
@@ -100,7 +100,7 @@ export default function ActivitiesClientPage() {
       category: "مغامرات",
       duration: "ساعة واحدة",
       price: 4500,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/cd/c5/73/aj-hackett-international.jpg?w=1100&h=-1&s=1",
       description: "مغامرة الزبلاين المثيرة فوق النهر",
     },
     {
@@ -132,7 +132,7 @@ export default function ActivitiesClientPage() {
       category: "عائلية",
       duration: "ساعتان",
       price: 2500,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://www.urtrips.com/wp-content/uploads/2022/09/moskvarium-aquarium-moscow_6.jpg",
       description: "استكشاف عالم البحار في أكواريوم رائع",
     },
 
@@ -154,7 +154,7 @@ export default function ActivitiesClientPage() {
       category: "ثقافية",
       duration: "3 ساعات",
       price: 3500,
-      image: "https://russiatoursgate.com/wp-content/uploads/2025/01/cruise-on-the-moscow-river-optimized.jpg",
+      image: "https://avatars.mds.yandex.net/get-altay/14333651/2a000001946e1c1421532b643c7a5573c17b/XXXL",
       description: "جولة بحرية ساحرة في أنهار سان بطرسبرغ",
     },
     {
@@ -164,7 +164,7 @@ export default function ActivitiesClientPage() {
       category: "ثقافية",
       duration: "3 ساعات",
       price: 0,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://novayaopera.ru/upload/images/theatre.png",
       description: "عرض أوبرا كلاسيكي (حسب التوفر)",
     },
     {
@@ -174,7 +174,7 @@ export default function ActivitiesClientPage() {
       category: "ثقافية",
       duration: "ساعتان ونصف",
       price: 0,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://platinumlist.net/guide/wp-content/uploads/2024/03/601-Swan-Lake-Act-3-Natalia-Kleymyonova-Daniil-Orlov-jpg-scaled-1-1536x928-1.jpg",
       description: "عرض باليه روسي تقليدي (حسب التوفر)",
     },
 
@@ -208,7 +208,7 @@ export default function ActivitiesClientPage() {
       category: "مغامرات",
       duration: "ساعة واحدة",
       price: 40000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://res.cloudinary.com/tourhq/image/upload/fl_progressive,f_auto,h_507,w_900,g_auto,c_fill,q_auto/ntpm7qizqbmwkqkmrk0y",
       description: "تجربة دريفت مثيرة بسيارات حقيقية",
     },
     {
@@ -250,7 +250,7 @@ export default function ActivitiesClientPage() {
       category: "عائلية",
       duration: "3 ساعات",
       price: 2000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://russiatoursgate.com/wp-content/uploads/2024/11/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9-%D8%AD%D9%8A%D9%88%D8%A7%D9%86-%D9%85%D9%88%D8%B3%D9%83%D9%88-optimized.jpg",
       description: "زيارة ممتعة لحديقة الحيوان مع العائلة",
     },
     {
@@ -337,7 +337,7 @@ export default function ActivitiesClientPage() {
 
     // Show success toast
     if (typeof window !== "undefined" && (window as any).showToast) {
-      ;(window as any).showToast({
+      ; (window as any).showToast({
         type: "success",
         title: "تم إضافة النشاط!",
         message: `تم إضافة "${activity.name}" إلى سلة الحجز`,
@@ -431,7 +431,7 @@ export default function ActivitiesClientPage() {
                 <p className="text-2xl font-bold text-green-800 mt-2">المجموع: {getTotalPrice().toLocaleString()} ₽</p>
               </div>
               <Button
-                onClick={() => {}}
+                onClick={() => { }}
                 className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-lg"
               >
                 <ShoppingCart className="w-5 h-5 ml-2" />
@@ -450,9 +450,8 @@ export default function ActivitiesClientPage() {
             return (
               <div
                 key={activity.id}
-                className={`bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all duration-300 ${
-                  isSelected ? "ring-2 ring-blue-500 shadow-lg" : ""
-                }`}
+                className={`bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all duration-300 ${isSelected ? "ring-2 ring-blue-500 shadow-lg" : ""
+                  }`}
               >
                 <img
                   src={activity.image || "/placeholder.svg"}

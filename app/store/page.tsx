@@ -4,8 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Trash2, MessageCircle, Plus, Minus } from "lucide-react"
+import { Trash2, MessageCircle, Plus, Minus, Calendar, Users, Baby, Hotel, MapPin, User } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { useCart } from "@/hooks/use-cart"
 
@@ -17,8 +16,12 @@ export default function StorePage() {
     children: 0,
     childrenAges: "",
     breakfast: false,
-    notes: "",
   })
+  const [notes, setNotes] = useState("")
+
+  // Get hotel booking data if exists
+  const hotelItem = cart.find((item) => item.type === "hotel")
+  const hotelBookingData = hotelItem?.bookingData
 
   const handleRemoveFromCart = (index: number) => {
     const itemName = cart[index]?.name || cart[index]?.nameAr || "العنصر"
@@ -60,22 +63,69 @@ export default function StorePage() {
     }, 0)
   }
 
+  const formatDate = (dateString: string) => {
+    if (!dateString) return ""
+    const date = new Date(dateString)
+    const months = [
+      "يناير",
+      "فبراير",
+      "مارس",
+      "أبريل",
+      "مايو",
+      "يونيو",
+      "يوليو",
+      "أغسطس",
+      "سبتمبر",
+      "أكتوبر",
+      "نوفمبر",
+      "ديسمبر",
+    ]
+
+    const day = date.getDate()
+    const month = months[date.getMonth()]
+    const year = date.getFullYear()
+
+    return `${day} ${month} ${year}`
+  }
+
   const sendToWhatsApp = () => {
-    if (!formData.fullName) {
+    // Check if name is provided
+    if (!formData.fullName.trim()) {
       // Show error toast
       if (typeof window !== "undefined" && (window as any).showToast) {
         ; (window as any).showToast({
           type: "error",
           title: "خطأ في البيانات",
-          message: "يرجى إدخال الاسم الكامل",
+          message: "يرجى إدخال الاسم الكامل قبل إرسال الطلب",
           duration: 4000,
         })
       }
       return
     }
 
-    let message = `🌟 طلب حجز جديد من قاضي موسكو 🌟\n\n`
-    message += `👤 الاسم: ${formData.fullName}\n`
+    let message = `🌟 طلب حجز جديد من قديموسكو 🌟\n\n`
+
+    // Add customer name first
+    message += `👤 الاسم: ${formData.fullName}\n\n`
+
+    // Add hotel booking information if available
+    if (hotelBookingData) {
+      message += `📅 معلومات الحجز:\n`
+      message += `📍 تاريخ الوصول: ${formatDate(hotelBookingData.checkIn)}\n`
+      message += `📍 تاريخ المغادرة: ${formatDate(hotelBookingData.checkOut)}\n`
+      message += `🏠 عدد الغرف: ${hotelBookingData.rooms}\n`
+      message += `👥 عدد البالغين: ${hotelBookingData.adults}\n`
+
+      if (hotelBookingData.hasChildren && hotelBookingData.children > 0) {
+        message += `👶 عدد الأطفال: ${hotelBookingData.children}\n`
+        if (hotelBookingData.childrenAges) {
+          message += `🎂 أعمار الأطفال: ${hotelBookingData.childrenAges}\n`
+        }
+      }
+
+      message += `🍽️ الإفطار: ${hotelBookingData.breakfast ? "مطلوب" : "غير مطلوب"}\n\n`
+    }
+
     message += `👥 عدد البالغين: ${formData.adults}\n`
     message += `👶 عدد الأطفال: ${formData.children}\n`
 
@@ -119,11 +169,11 @@ export default function StorePage() {
       }
     }
 
-    if (formData.notes) {
-      message += `📝 ملاحظات إضافية:\n${formData.notes}\n\n`
+    if (notes) {
+      message += `📝 ملاحظات إضافية:\n${notes}\n\n`
     }
 
-    message += `شكراً لاختياركم قاضي موسكو! 🇷🇺✈️`
+    message += `شكراً لاختياركم قديموسكو! 🇷🇺✈️`
 
     const whatsappNumber = "79174828474"
     const encodedMessage = encodeURIComponent(message)
@@ -229,77 +279,157 @@ export default function StorePage() {
             )}
           </div>
 
-          {/* Booking Form */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-blue-900 mb-4">معلومات الحجز</h2>
+          {/* Booking Summary and Notes */}
+          <div className="space-y-6">
+            {/* Customer Information */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                <User className="w-5 h-5 ml-2" />
+                معلومات العميل
+              </h2>
 
-            <div className="space-y-4">
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    الاسم الكامل <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                    placeholder="أدخل اسمك الكامل"
+                    className={`w-full ${!formData.fullName.trim() ? "border-red-300 focus:border-red-500" : ""}`}
+                  />
+                  {!formData.fullName.trim() && (
+                    <p className="text-red-500 text-sm mt-1">الاسم الكامل مطلوب لإرسال الطلب</p>
+                  )}
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">عدد البالغين</label>
+                    <Input
+                      type="number"
+                      min="1"
+                      value={formData.adults}
+                      onChange={(e) => setFormData({ ...formData, adults: Number.parseInt(e.target.value) || 1 })}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">عدد الأطفال</label>
+                    <Input
+                      type="number"
+                      min="0"
+                      value={formData.children}
+                      onChange={(e) => setFormData({ ...formData, children: Number.parseInt(e.target.value) || 0 })}
+                    />
+                  </div>
+                </div>
+
+                {formData.children > 0 && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">أعمار الأطفال</label>
+                    <Input
+                      value={formData.childrenAges}
+                      onChange={(e) => setFormData({ ...formData, childrenAges: e.target.value })}
+                      placeholder="مثال: 3, 6, 10"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Hotel Booking Information Display */}
+            {hotelBookingData && (
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h2 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                  <Hotel className="w-5 h-5 ml-2" />
+                  معلومات الحجز
+                </h2>
+
+                <div className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                      <Calendar className="w-5 h-5 text-blue-600 ml-2" />
+                      <div>
+                        <p className="text-sm text-gray-600">تاريخ الوصول</p>
+                        <p className="font-semibold text-blue-900">{formatDate(hotelBookingData.checkIn)}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                      <Calendar className="w-5 h-5 text-blue-600 ml-2" />
+                      <div>
+                        <p className="text-sm text-gray-600">تاريخ المغادرة</p>
+                        <p className="font-semibold text-blue-900">{formatDate(hotelBookingData.checkOut)}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                      <MapPin className="w-5 h-5 text-green-600 ml-2" />
+                      <div>
+                        <p className="text-sm text-gray-600">الغرف</p>
+                        <p className="font-semibold text-green-900">{hotelBookingData.rooms}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                      <Users className="w-5 h-5 text-green-600 ml-2" />
+                      <div>
+                        <p className="text-sm text-gray-600">البالغين</p>
+                        <p className="font-semibold text-green-900">{hotelBookingData.adults}</p>
+                      </div>
+                    </div>
+
+                    {hotelBookingData.hasChildren && hotelBookingData.children > 0 && (
+                      <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                        <Baby className="w-5 h-5 text-green-600 ml-2" />
+                        <div>
+                          <p className="text-sm text-gray-600">الأطفال</p>
+                          <p className="font-semibold text-green-900">{hotelBookingData.children}</p>
+                          {hotelBookingData.childrenAges && (
+                            <p className="text-xs text-gray-500">الأعمار: {hotelBookingData.childrenAges}</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                    <span className="text-sm font-medium text-gray-700">الإفطار:</span>
+                    <span
+                      className={`font-semibold ${hotelBookingData.breakfast ? "text-green-600" : "text-gray-600"}`}
+                    >
+                      {hotelBookingData.breakfast ? "مطلوب" : "غير مطلوب"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Notes Section */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-xl font-semibold text-blue-900 mb-4">ملاحظات إضافية</h2>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">الاسم الكامل *</label>
-                <Input
-                  value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  placeholder="أدخل اسمك الكامل"
-                />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">عدد البالغين</label>
-                  <Input
-                    type="number"
-                    min="1"
-                    value={formData.adults}
-                    onChange={(e) => setFormData({ ...formData, adults: Number.parseInt(e.target.value) })}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">عدد الأطفال</label>
-                  <Input
-                    type="number"
-                    min="0"
-                    value={formData.children}
-                    onChange={(e) => setFormData({ ...formData, children: Number.parseInt(e.target.value) })}
-                  />
-                </div>
-              </div>
-
-              {formData.children > 0 && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">أعمار الأطفال</label>
-                  <Input
-                    value={formData.childrenAges}
-                    onChange={(e) => setFormData({ ...formData, childrenAges: e.target.value })}
-                    placeholder="مثال: 5، 8، 12"
-                  />
-                </div>
-              )}
-
-              <div className="flex items-center space-x-2 space-x-reverse">
-                <Checkbox
-                  id="breakfast"
-                  checked={formData.breakfast}
-                  onCheckedChange={(checked) => setFormData({ ...formData, breakfast: checked as boolean })}
-                />
-                <label htmlFor="breakfast" className="text-sm font-medium text-gray-700">
-                  مع الإفطار
-                </label>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">ملاحظات إضافية</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">أي طلبات خاصة أو ملاحظات...</label>
                 <Textarea
-                  value={formData.notes}
-                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  placeholder="أي طلبات خاصة أو ملاحظات..."
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="مثال: نريد غرف متجاورة، نريد إطلالة على البحر، لدينا حساسية من الطعام..."
                   rows={4}
                 />
               </div>
 
-              <Button onClick={sendToWhatsApp} className="btn-primary w-full text-lg py-3">
+              <Button
+                onClick={sendToWhatsApp}
+                className={`w-full text-lg py-3 mt-4 ${!formData.fullName.trim() ? "bg-gray-400 cursor-not-allowed hover:bg-gray-400" : "btn-primary"
+                  }`}
+                disabled={!formData.fullName.trim()}
+              >
                 <MessageCircle className="w-5 h-5 ml-2" />
-                أرسل إلى واتساب
+                {!formData.fullName.trim() ? "أدخل اسمك أولاً" : "أرسل إلى واتساب"}
               </Button>
             </div>
           </div>

@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import type React from "react"
+
+import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -14,7 +16,7 @@ import { useCart } from "@/hooks/use-cart"
 const hotelsStructuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "فنادق روسيا - قاضي موسكو",
+  name: "فنادق روسيا - قديموسكو",
   description: "قائمة بأفضل الفنادق في روسيا",
   numberOfItems: 12,
   itemListElement: [
@@ -80,10 +82,110 @@ export default function HotelsClientPage() {
     breakfast: false,
   })
 
+  const [dateErrors, setDateErrors] = useState({
+    checkIn: "",
+    checkOut: "",
+  })
+
+  const checkOutRef = useRef<HTMLInputElement>(null)
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null)
   const [showReplaceModal, setShowReplaceModal] = useState(false)
   const [pendingHotel, setPendingHotel] = useState<Hotel | null>(null)
   const { items: cart, addItem, removeItem } = useCart()
+
+  // Get today's date in YYYY-MM-DD format for min attribute
+  const today = new Date().toISOString().split("T")[0]
+
+  // Calculate tomorrow's date for minimum check-out date
+  const getTomorrow = (date: string) => {
+    if (!date) return ""
+    const nextDay = new Date(date)
+    nextDay.setDate(nextDay.getDate() + 1)
+    return nextDay.toISOString().split("T")[0]
+  }
+
+  // Handle check-in date change
+  const handleCheckInChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newCheckIn = e.target.value
+
+    // Validate check-in date is not in the past
+    const selectedDate = new Date(newCheckIn)
+    const currentDate = new Date()
+    currentDate.setHours(0, 0, 0, 0) // Reset time to start of day for comparison
+
+    if (selectedDate < currentDate) {
+      setDateErrors({
+        ...dateErrors,
+        checkIn: "لا يمكن اختيار تاريخ في الماضي",
+      })
+      return
+    }
+
+    // Clear error if valid
+    setDateErrors({
+      ...dateErrors,
+      checkIn: "",
+    })
+
+    // Update check-in date
+    const newBookingData = {
+      ...bookingData,
+      checkIn: newCheckIn,
+    }
+
+    // If check-out date exists, validate it's after the new check-in
+    if (bookingData.checkOut) {
+      const checkOutDate = new Date(bookingData.checkOut)
+      if (checkOutDate <= selectedDate) {
+        // Reset check-out date if it's now invalid
+        newBookingData.checkOut = ""
+        setDateErrors({
+          ...dateErrors,
+          checkOut: "تاريخ المغادرة يجب أن يكون بعد تاريخ الوصول بليلة واحدة على الأقل",
+        })
+      }
+    }
+
+    setBookingData(newBookingData)
+
+    // Auto-focus check-out field after selecting check-in
+    if (newCheckIn && checkOutRef.current) {
+      setTimeout(() => {
+        checkOutRef.current?.focus()
+      }, 100)
+    }
+  }
+
+  // Handle check-out date change
+  const handleCheckOutChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newCheckOut = e.target.value
+
+    // Validate check-out is after check-in
+    if (bookingData.checkIn && newCheckOut) {
+      const checkInDate = new Date(bookingData.checkIn)
+      const checkOutDate = new Date(newCheckOut)
+
+      if (checkOutDate <= checkInDate) {
+        setDateErrors({
+          ...dateErrors,
+          checkOut: "تاريخ المغادرة يجب أن يكون بعد تاريخ الوصول بليلة واحدة على الأقل",
+        })
+        return
+      }
+    }
+
+    // Clear error if valid
+    setDateErrors({
+      ...dateErrors,
+      checkOut: "",
+    })
+
+    // Update check-out date
+    setBookingData({
+      ...bookingData,
+      checkOut: newCheckOut,
+    })
+  }
 
   // Check if there's already a hotel in the cart
   const existingHotel = cart.find((item) => item.type === "hotel")
@@ -505,6 +607,7 @@ export default function HotelsClientPage() {
     // },
   ]
 
+
   const getDistanceText = (distance: number, city: string) => {
     if (distance === 0) {
       if (city === "Moscow") return "في قلب الساحة الحمراء"
@@ -539,7 +642,13 @@ export default function HotelsClientPage() {
   }
 
   const isBookingDataComplete = () => {
-    return bookingData.checkIn && bookingData.checkOut && bookingData.adults > 0
+    return (
+      bookingData.checkIn &&
+      bookingData.checkOut &&
+      bookingData.adults > 0 &&
+      !dateErrors.checkIn &&
+      !dateErrors.checkOut
+    )
   }
 
   const handleHotelSelect = (hotel: Hotel) => {
@@ -752,19 +861,24 @@ export default function HotelsClientPage() {
               <Input
                 type="date"
                 value={bookingData.checkIn}
-                onChange={(e) => setBookingData({ ...bookingData, checkIn: e.target.value })}
-                className="w-full"
+                onChange={handleCheckInChange}
+                min={today}
+                className={`w-full ${dateErrors.checkIn ? "border-red-300 focus:border-red-500" : ""}`}
               />
+              {dateErrors.checkIn && <p className="text-red-500 text-sm mt-1">{dateErrors.checkIn}</p>}
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">تاريخ المغادرة *</label>
               <Input
+                ref={checkOutRef}
                 type="date"
                 value={bookingData.checkOut}
-                onChange={(e) => setBookingData({ ...bookingData, checkOut: e.target.value })}
-                className="w-full"
+                onChange={handleCheckOutChange}
+                min={bookingData.checkIn ? getTomorrow(bookingData.checkIn) : today}
+                className={`w-full ${dateErrors.checkOut ? "border-red-300 focus:border-red-500" : ""}`}
               />
+              {dateErrors.checkOut && <p className="text-red-500 text-sm mt-1">{dateErrors.checkOut}</p>}
             </div>
 
             <div>

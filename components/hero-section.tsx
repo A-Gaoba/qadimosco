@@ -14,7 +14,7 @@ export function HeroSection() {
       image:
         "https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
       title: "اكتشف جمال روسيا",
-      subtitle: "مع قديموسكو",
+      subtitle: "مع قاضي موسكو",
       description: "رحلات سياحية استثنائية إلى موسكو وسان بطرسبرغ وسوتشي مع خدمات عربية متكاملة",
       highlight: "أكثر من 5000 مسافر سعيد",
     },
@@ -181,8 +181,8 @@ export function HeroSection() {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`relative transition-all duration-500 touch-manipulation ${index === currentSlide
-                ? "w-8 sm:w-12 md:w-16 h-3 sm:h-4 md:h-5 bg-coral-500 rounded-full scale-110 sm:scale-125 shadow-2xl"
-                : "w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 bg-white/50 hover:bg-white/70 rounded-full hover:scale-110"
+              ? "w-8 sm:w-12 md:w-16 h-3 sm:h-4 md:h-5 bg-coral-500 rounded-full scale-110 sm:scale-125 shadow-2xl"
+              : "w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 bg-white/50 hover:bg-white/70 rounded-full hover:scale-110"
               }`}
           >
             {index === currentSlide && (
