@@ -11,7 +11,7 @@ export function CitiesSection() {
       name: "موسكو",
       description: "العاصمة الساحرة بقصورها التاريخية والساحة الحمراء الشهيرة",
       image:
-        "https://geohistory.today/wp-content/uploads/2017/09/Moscow.jpg",
+        "./activity/moscow.jpeg",
       href: "/activities?city=moscow",
       highlights: ["الساحة الحمراء", "الكرملين", "مسرح البولشوي"],
       temperature: "15°C",

@@ -49,8 +49,8 @@ export default function ActivitiesClientPage() {
       city: "سوتشي",
       category: "مغامرات",
       duration: "3 ساعات",
-      price: 15000,
-      image: "https://www.shutterstock.com/image-photo/on-off-road-two-people-260nw-2261804651.jpg",
+      price: 10000,
+      image: "https://avatars.mds.yandex.net/get-altay/11401274/2a0000018bf1ef41a8c9c4f90e71aaab5f38/XXXL",
       description: "مغامرة مثيرة بالدراجات العملاقة في المسارات الجبلية",
     },
     {
@@ -60,18 +60,8 @@ export default function ActivitiesClientPage() {
       category: "طبيعة",
       duration: "ساعة واحدة",
       price: 8500,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://yacota-moto.com/upload/iblock/df1/31.jpg",
       description: "لمدة ساعة كاملة في الغابة في مكان واحد",
-    },
-    {
-      id: 4,
-      name: "دبابات سفاري",
-      city: "سوتشي",
-      category: "مغامرات",
-      duration: "ساعتان",
-      price: 8500,
-      image: "/placeholder.svg?height=200&width=300",
-      description: "جولة سفاري مثيرة بالدبابات في الطبيعة البرية",
     },
     {
       id: 5,
@@ -143,7 +133,7 @@ export default function ActivitiesClientPage() {
       city: "موسكو",
       category: "ثقافية",
       duration: "ساعتان",
-      price: 3800,
+      price: 2500,
       image: "https://ivisitrussia.com/119-large_default/the-russian-circus-tour.jpg",
       description: "عرض السيرك الروسي التقليدي الشهير",
     },
@@ -207,7 +197,7 @@ export default function ActivitiesClientPage() {
       city: "موسكو",
       category: "مغامرات",
       duration: "ساعة واحدة",
-      price: 40000,
+      price: 24000,
       image: "https://res.cloudinary.com/tourhq/image/upload/fl_progressive,f_auto,h_507,w_900,g_auto,c_fill,q_auto/ntpm7qizqbmwkqkmrk0y",
       description: "تجربة دريفت مثيرة بسيارات حقيقية",
     },
@@ -223,12 +213,12 @@ export default function ActivitiesClientPage() {
     },
     {
       id: 19,
-      name: "التصوير مع الدب",
+      name: "فعالية الدب مع المواصلات مع المصور",
       city: "موسكو",
       category: "مميزة",
       duration: "ساعة واحدة",
-      price: 36000,
-      image: "https://ainalarab.com/wp-content/uploads/2024/03/%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%B5%D9%88%D9%8A%D8%B1-%D9%85%D8%B9-%D8%A7%D9%84%D8%AF%D8%A8.jpeg",
+      price: 70000,
+      image: "./activity/dub.jpeg",
       description: "التصوير مع الدب في ملابس تراثية روسية وشرب الشاي وتناول البسكويت",
     },
     {
@@ -238,7 +228,7 @@ export default function ActivitiesClientPage() {
       category: "مغامرات",
       duration: "ساعتان ونصف",
       price: 16000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://avatars.mds.yandex.net/get-altay/6487610/2a00000183a804caa27106eee1a17e90d0d1/XXXL",
       description: "تجربة المعسكر الحربي لمدة ساعتين ونصف",
     },
 
@@ -259,19 +249,9 @@ export default function ActivitiesClientPage() {
       city: "موسكو",
       category: "عائلية",
       duration: "يوم كامل",
-      price: 5000,
-      image: "https://lh3.googleusercontent.com/p/AF1QipPnAC2YpVuFOm-QHaDoNBqG-7-Bp1k-HAqhAJgF=w270-h312-n-k-no",
+      price: 3500,
+      image: "https://lh3.googleusercontent.com/p/AF1QipPnAC2YpVuFOm-QHaDoNBqG-7-Bp1k-HAqhAJgF=s1360-w1360-h1020-rw",
       description: "مدينة ألعاب شاملة الألعاب",
-    },
-    {
-      id: 23,
-      name: "مصنع الآيس كريم",
-      city: "موسكو",
-      category: "عائلية",
-      duration: "ساعتان",
-      price: 5000,
-      image: "/placeholder.svg?height=200&width=300",
-      description: "جولة تعليمية وممتعة في مصنع الآيس كريم",
     },
     {
       id: 24,
@@ -279,8 +259,8 @@ export default function ActivitiesClientPage() {
       city: "موسكو",
       category: "ثقافية",
       duration: "ساعة واحدة",
-      price: 4500,
-      image: "/placeholder.svg?height=200&width=300",
+      price: 3500,
+      image: "./activity/panoramas.jpeg",
       description: "إطلالة بانورامية 360 درجة على موسكو",
     },
     {
@@ -290,7 +270,7 @@ export default function ActivitiesClientPage() {
       category: "عائلية",
       duration: "ساعتان",
       price: 4000,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "./activity/qazal.jpeg",
       description: "زيارة حديقة الغزلان الريفية وإطعامها",
     },
     {
@@ -300,7 +280,7 @@ export default function ActivitiesClientPage() {
       category: "عائلية",
       duration: "30 دقيقة",
       price: 600,
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/cf/7f/af/maisi-flitzer-sommer.jpg?w=1200&h=1200&s=1",
       description: "متعة الزحليقة للأطفال والكبار",
     },
   ]
@@ -456,13 +436,13 @@ export default function ActivitiesClientPage() {
                 <img
                   src={activity.image || "/placeholder.svg"}
                   alt={activity.name}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-60 object-cover"
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-blue-900 mb-2">{activity.name}</h3>
                   <div className="flex items-center text-sm text-gray-600 mb-2">
-                    <MapPin className="w-4 h-4 ml-1" />
-                    <span className="ml-3">{activity.city}</span>
+                    {/* <MapPin className="w-4 h-4 ml-1" /> */}
+                    {/* <span className="ml-3">{activity.city}</span> */}
                     <Clock className="w-4 h-4 mr-3 ml-1" />
                     <span>{activity.duration}</span>
                   </div>
