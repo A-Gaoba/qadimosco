@@ -227,7 +227,7 @@ export default function ActivitiesClientPage() {
       city: "موسكو",
       category: "مغامرات",
       duration: "ساعتان ونصف",
-      price: 16000,
+      price: 15000,
       image: "https://avatars.mds.yandex.net/get-altay/6487610/2a00000183a804caa27106eee1a17e90d0d1/XXXL",
       description: "تجربة المعسكر الحربي لمدة ساعتين ونصف",
     },
@@ -440,12 +440,12 @@ export default function ActivitiesClientPage() {
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-blue-900 mb-2">{activity.name}</h3>
-                  <div className="flex items-center text-sm text-gray-600 mb-2">
-                    {/* <MapPin className="w-4 h-4 ml-1" /> */}
-                    {/* <span className="ml-3">{activity.city}</span> */}
+                  {/* <div className="flex items-center text-sm text-gray-600 mb-2">
+                    <MapPin className="w-4 h-4 ml-1" />
+                    <span className="ml-3">{activity.city}</span>
                     <Clock className="w-4 h-4 mr-3 ml-1" />
                     <span>{activity.duration}</span>
-                  </div>
+                  </div> */}
                   <div className="flex items-center justify-between mb-3">
                     <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
                       {activity.category}
