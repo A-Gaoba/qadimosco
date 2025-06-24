@@ -5,14 +5,14 @@ import { Sparkles, ArrowLeft, MessageCircle, Calculator } from "lucide-react"
 export function CTASection() {
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent("مرحباً! أريد حجز رحلة إلى روسيا مع قاضي موسكو. يرجى مساعدتي في التخطيط 🇷🇺✈️")
-    window.open(`https://wa.me/79174828474?text=${message}`, "_blank")
+    window.open(`https://wa.me/79177714832?text=${message}`, "_blank")
   }
 
   const handleQuoteRequest = () => {
     const message = encodeURIComponent(
       "مرحباً! أريد الحصول على عرض سعر شامل لرحلة إلى روسيا. يرجى إرسال التفاصيل والأسعار المتاحة 💰📋",
     )
-    window.open(`https://wa.me/79174828474?text=${message}`, "_blank")
+    window.open(`https://wa.me/79177714832?text=${message}`, "_blank")
   }
 
   return (

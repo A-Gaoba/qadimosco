@@ -54,7 +54,7 @@ const structuredData = {
         availableLanguage: ["Arabic", "Russian", "English"],
         areaServed: ["RU", "SA", "AE", "KW", "QA", "OM", "BH"],
       },
-      sameAs: ["https://wa.me/79174828474", "https://t.me/qadimosco", "https://instagram.com/qadimosco"],
+      sameAs: ["https://wa.me/79177714832", "https://t.me/qadimosco", "https://instagram.com/qadimosco"],
       foundingDate: "2014",
       numberOfEmployees: "25",
       slogan: "اكتشف روسيا معنا",

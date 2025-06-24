@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
 export function Footer() {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("مرحباً! أريد الاستفسار عن خدماتكم السياحية في روسيا 🇷🇺")
-    window.open(`https://wa.me/79174828474?text=${message}`, "_blank")
+    window.open(`https://wa.me/79177714832?text=${message}`, "_blank")
   }
 
   return (

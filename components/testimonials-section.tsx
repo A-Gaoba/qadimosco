@@ -186,7 +186,7 @@ export function TestimonialsSection() {
                       const message = encodeURIComponent(
                         "مرحباً! أريد الاستفسار عن تجارب العملاء ومشاركة آرائهم حول رحلاتهم إلى روسيا 🇷🇺⭐",
                       )
-                      window.open(`https://wa.me/79174828474?text=${message}`, "_blank")
+                      window.open(`https://wa.me/79177714832?text=${message}`, "_blank")
                     }}
                     className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white hover:bg-white/30 px-12 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 group"
                   >

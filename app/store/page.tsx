@@ -175,7 +175,7 @@ export default function StorePage() {
 
     message += `شكراً لاختياركم قديموسكو! 🇷🇺✈️`
 
-    const whatsappNumber = "79174828474"
+    const whatsappNumber = "79177714832"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
 

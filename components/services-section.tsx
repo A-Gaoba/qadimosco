@@ -100,13 +100,12 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <SectionObserver key={index}>
               <div
-                className={`group relative bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 card-hover border-2 overflow-hidden ${
-                  service.colorTheme === "primary"
+                className={`group relative bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 card-hover border-2 overflow-hidden ${service.colorTheme === "primary"
                     ? "border-sky-200 hover:border-sky-300"
                     : service.colorTheme === "secondary"
                       ? "border-sunset-200 hover:border-sunset-300"
                       : "border-coral-200 hover:border-coral-300"
-                }`}
+                  }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Background Gradient */}
@@ -135,13 +134,12 @@ export function ServicesSection() {
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center justify-center">
                       <div
-                        className={`w-2 h-2 rounded-full ml-2 ${
-                          service.colorTheme === "primary"
+                        className={`w-2 h-2 rounded-full ml-2 ${service.colorTheme === "primary"
                             ? "bg-sky-500"
                             : service.colorTheme === "secondary"
                               ? "bg-sunset-500"
                               : "bg-coral-500"
-                        }`}
+                          }`}
                       ></div>
                       <span className="text-sm text-gray-700 font-medium">{feature}</span>
                     </div>
@@ -150,13 +148,12 @@ export function ServicesSection() {
 
                 {/* Hover Effect */}
                 <div
-                  className={`absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
-                    service.colorTheme === "primary"
+                  className={`absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${service.colorTheme === "primary"
                       ? "bg-gradient-to-r from-sky-500 to-sky-600"
                       : service.colorTheme === "secondary"
                         ? "bg-gradient-to-r from-sunset-500 to-sunset-600"
                         : "bg-gradient-to-r from-coral-500 to-coral-600"
-                  }`}
+                    }`}
                 ></div>
               </div>
             </SectionObserver>
@@ -172,13 +169,12 @@ export function ServicesSection() {
                 <div key={index} className="flex items-center justify-center text-center group">
                   <div className="flex flex-col items-center">
                     <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 ${
-                        index % 3 === 0
+                      className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 ${index % 3 === 0
                           ? "bg-gradient-to-br from-sky-500 to-sky-600"
                           : index % 3 === 1
                             ? "bg-gradient-to-br from-sunset-500 to-sunset-600"
                             : "bg-gradient-to-br from-coral-500 to-coral-600"
-                      }`}
+                        }`}
                     >
                       <cert.icon className="w-6 h-6 text-white" />
                     </div>
@@ -214,7 +210,7 @@ export function ServicesSection() {
                       const message = encodeURIComponent(
                         "مرحباً! أريد الحصول على استشارة مجانية لتخطيط رحلتي إلى روسيا 🇷🇺✈️",
                       )
-                      window.open(`https://wa.me/79174828474?text=${message}`, "_blank")
+                      window.open(`https://wa.me/79177714832?text=${message}`, "_blank")
                     }}
                     className="bg-white text-sky-600 px-6 sm:px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
                   >
@@ -226,7 +222,7 @@ export function ServicesSection() {
                       const message = encodeURIComponent(
                         "مرحباً! أريد الحصول على عرض سعر مفصل لرحلة إلى روسيا. يرجى إرسال التفاصيل والأسعار 💰📋",
                       )
-                      window.open(`https://wa.me/79174828474?text=${message}`, "_blank")
+                      window.open(`https://wa.me/79177714832?text=${message}`, "_blank")
                     }}
                     className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-xl font-bold hover:bg-white/30 transition-all duration-300"
                   >

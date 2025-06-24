@@ -79,7 +79,7 @@ export function SEOHead({
             longitude: 37.6176,
           },
           url: "https://qadimosco.com",
-          sameAs: ["https://wa.me/79174828474"],
+          sameAs: ["https://wa.me/79177714832"],
           openingHoursSpecification: {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],

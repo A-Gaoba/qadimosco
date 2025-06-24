@@ -162,7 +162,7 @@ export function ComprehensiveTourForm() {
 
     message += `\nشكراً لاختياركم قاضي موسكو لجولتكم الشاملة في روسيا! 🇷🇺✈️`
 
-    const whatsappNumber = "79174828474"
+    const whatsappNumber = "79177714832"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
 
